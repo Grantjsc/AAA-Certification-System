@@ -360,7 +360,7 @@ Module Query_Module
                         Create_Form.cboLine.Items.AddRange(New String() {"Frontline", "Back End", "QA"})
 
                     Case "PLANT QUALITY"
-                        Create_Form.cboLine.Items.AddRange(New String() {"QA"})
+                        Create_Form.cboLine.Items.AddRange(New String() {"RS QA", "SQ NANO QA", "PICO QA", "TFF QA", "CCF QA", "TRTE QA"})
 
                     Case Else
                         ' Optionally, you can handle other cases or leave the ComboBox empty
@@ -446,7 +446,6 @@ Module Query_Module
                 Create_Form.txtName.Clear()
                 Create_Form.txtValueStream.Clear()
                 Create_Form.cboLine.Items.Clear()
-                Create_Form.cboStation.Items.Clear()
 
                 Create_Form.txtEmpNum.Focus()
             Catch ex As Exception
@@ -674,6 +673,8 @@ Module Query_Module
                 Edit_Form.cboValueStream.Text = Nothing
                 Edit_Form.cboLine.Text = Nothing
                 Edit_Form.cboStation.Text = Nothing
+
+                MsgBox("Employee details are now up to date.", MsgBoxStyle.Information)
 
                 Get_EmployeeData_Edit()
 
@@ -936,6 +937,8 @@ Module Query_Module
                 department = "THIN_FILM"
             Case "REED SWITCH"
                 department = "REED_SWITCH"
+            Case "PLANT QUALITY"
+                department = "REED_SWITCH"
         End Select
 
         Try
@@ -1013,6 +1016,8 @@ Module Query_Module
             Case "THIN FILM"
                 department = "THIN_FILM"
             Case "REED SWITCH"
+                department = "REED_SWITCH"
+            Case "PLANT QUALITY"
                 department = "REED_SWITCH"
         End Select
 
@@ -1341,6 +1346,11 @@ Module Query_Module
                 CurrentIndex_ExamRes = 0
                 DisplayCurrentResult()
             Else
+                ExamResult_Form.lblTrialNum.Text = TrialResult_TrialNumber
+                ExamResult_Form.lblMistake.Text = "Mistake(s): 0"
+                ExamResult_Form.lblQuestion.Text = "Question Number: "
+                ExamResult_Form.lblCorrectAns.Visible = False
+
                 MessageBox.Show("No mistakes found.")
             End If
 
@@ -1645,6 +1655,241 @@ Module Query_Module
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
+
+    'Sub SaveARRReport(resultTable As DataTable, answerKeyTable As DataTable, inspectorName As String, idNumber As String, department As String, station As String)
+    '    ExcelPackage.LicenseContext = LicenseContext.NonCommercial
+    '    Dim dateNtime = DateTime.Now.ToString("MMM dd yyyy - HH_mmtt")
+
+    '    Select Case Exam_Attempt
+    '        Case 1
+    '            Take = "1st Take"
+    '        Case 2
+    '            Take = "2nd Take"
+    '        Case 3
+    '            Take = "3rd Take"
+    '    End Select
+
+    '    Get_SavingPath() 'get the folder path
+
+    '    Dim get_FolderPath As String = $"{Path_Saving}\AAA Certification\{Year_Saving}\{Month_Saving}\{Take} {inspectorName} {dateNtime}.xlsx"
+
+    '    Dim directoryPath As String = Path.GetDirectoryName(get_FolderPath)
+    '    If Not Directory.Exists(directoryPath) Then
+    '        Directory.CreateDirectory(directoryPath)
+    '    End If
+
+    '    Try
+    '        Dim logo As Bitmap = My.Resources.LF
+
+    '        Using ms As New MemoryStream()
+    '            logo.Save(ms, System.Drawing.Imaging.ImageFormat.Png)
+    '            ms.Position = 0
+
+    '            Using package As New ExcelPackage()
+    '                Dim worksheet As ExcelWorksheet = package.Workbook.Worksheets.Add("ARR Form")
+    '                worksheet.View.PageBreakView = True
+
+    '                worksheet.Cells("A1:H1").Merge = True
+    '                Dim picture = worksheet.Drawings.AddPicture("LF_Logo", ms)
+    '                picture.SetPosition(0, 0)
+    '                picture.SetSize(129, 28)
+
+    '                worksheet.InsertRow(2, 1)
+
+    '                worksheet.Cells("A2:H2").Merge = True
+    '                worksheet.Cells("A2").Value = "ATTRIBUTE AGREEMENT ANALYSIS (ANSWER SHEET)"
+    '                worksheet.Cells("A2").Style.Font.Size = 16
+    '                worksheet.Cells("A2").Style.Font.Bold = True
+    '                worksheet.Cells("A2").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+
+    '                worksheet.Cells("A3").Value = "Inspector's Name:"
+    '                worksheet.Cells("A3").Style.Font.Bold = True
+    '                worksheet.Cells("B3:D3").Merge = True
+    '                worksheet.Cells("B3").Value = inspectorName
+    '                worksheet.Cells("B3:D3").Style.Border.Bottom.Style = ExcelBorderStyle.Thin
+    '                worksheet.Cells("B3").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+
+    '                worksheet.Cells("E3").Value = "Date Conducted:"
+    '                worksheet.Cells("E3").Style.Font.Bold = True
+    '                worksheet.Cells("F3:H3").Merge = True
+    '                worksheet.Cells("F3").Value = DateTime.Now.ToString("M/d/yyyy")
+    '                worksheet.Cells("F3:H3").Style.Border.Bottom.Style = ExcelBorderStyle.Thin
+    '                worksheet.Cells("F3").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+
+    '                worksheet.Cells("A4").Value = "ID Number / Stat:"
+    '                worksheet.Cells("A4").Style.Font.Bold = True
+    '                worksheet.Cells("B4:D4").Merge = True
+    '                worksheet.Cells("B4").Value = $"{idNumber} / {station}"
+    '                worksheet.Cells("B4:D4").Style.Border.Bottom.Style = ExcelBorderStyle.Thin
+    '                worksheet.Cells("B4").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                worksheet.Cells("E4").Value = "Department:"
+    '                worksheet.Cells("E4").Style.Font.Bold = True
+    '                worksheet.Cells("F4:H4").Merge = True
+    '                worksheet.Cells("F4").Value = department
+    '                worksheet.Cells("F4:H4").Style.Border.Bottom.Style = ExcelBorderStyle.Thin
+    '                worksheet.Cells("F4").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+
+    '                worksheet.Cells("A6").Value = "Test Samples"
+    '                worksheet.Cells("A6").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                worksheet.Cells("B6").Value = department
+    '                worksheet.Cells("B6").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                worksheet.Cells("C6:D6").Merge = True
+    '                worksheet.Cells("C6").Value = "TRIAL 1"
+    '                worksheet.Cells("C6").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                worksheet.Cells("E6:F6").Merge = True
+    '                worksheet.Cells("E6").Value = "TRIAL 2"
+    '                worksheet.Cells("E6").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                worksheet.Cells("G6:H6").Merge = True
+    '                worksheet.Cells("G6").Value = "TRIAL 3"
+    '                worksheet.Cells("G6").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                worksheet.Cells("A6:H6").Style.Font.Bold = True
+    '                worksheet.Cells("A6:H6").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+
+    '                worksheet.Cells("A6:A60").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                worksheet.Cells("B6:B59").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                worksheet.Cells("C6:C59").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                worksheet.Cells("E6:E59").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                worksheet.Cells("G6:G59").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                worksheet.Cells("H6:H59").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+
+    '                worksheet.Cells("A60").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                worksheet.Cells("B60:H60").Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                worksheet.Cells("B60:H60").Merge = True
+    '                worksheet.Cells("A60").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                worksheet.Cells("B60").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+
+    '                Dim totalMatched(3) As Integer
+    '                Dim totalInspected(3) As Integer
+
+    '                For i As Integer = 6 To 59
+    '                    worksheet.Cells($"C{i}:D{i}").Merge = True
+    '                    worksheet.Cells($"E{i}:F{i}").Merge = True
+    '                    worksheet.Cells($"G{i}:H{i}").Merge = True
+
+    '                    worksheet.Cells($"A{i}").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                    worksheet.Cells($"B{i}").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                    worksheet.Cells($"C{i}").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                    worksheet.Cells($"E{i}").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                    worksheet.Cells($"G{i}").Style.HorizontalAlignment = ExcelHorizontalAlignment.Center
+    '                Next
+
+    '                For i As Integer = 0 To 49
+    '                    worksheet.Cells(i + 7, 1).Value = (i + 1).ToString()
+    '                    worksheet.Cells(i + 7, 2).Value = answerKeyTable.Rows(i)(department).ToString()
+
+    '                    For trialNum As Integer = 1 To 3
+    '                        Dim trialRow = resultTable.Select($"Question_Num = '{i + 1}' AND Test_Trial = '{trialNum.ToString()}'").FirstOrDefault()
+    '                        If trialRow IsNot Nothing Then
+    '                            Dim empAns = trialRow("EmpAns").ToString()
+    '                            Dim judgement = trialRow("Judgement").ToString()
+    '                            Dim colIndex As Integer = (trialNum - 1) * 2 + 3
+
+    '                            worksheet.Cells(i + 7, colIndex).Value = empAns
+    '                            totalInspected(trialNum) += 1
+
+    '                            If judgement.ToUpper() = "RIGHT" Then
+    '                                worksheet.Cells(i + 7, colIndex).Style.Font.Color.SetColor(Color.Green)
+    '                                totalMatched(trialNum) += 1
+    '                            ElseIf judgement.ToUpper() = "WRONG" Then
+    '                                worksheet.Cells(i + 7, colIndex).Style.Font.Color.SetColor(Color.Red)
+    '                            End If
+    '                        End If
+    '                    Next
+    '                Next
+
+    '                Dim summaryRow As Integer = 57
+    '                worksheet.Cells(summaryRow, 1).Value = "# Matched"
+    '                worksheet.Cells(summaryRow + 1, 1).Value = "# Inspected"
+    '                worksheet.Cells(summaryRow + 2, 1).Value = "% Agreement"
+    '                'worksheet.Cells(summaryRow + 3, 1).Value = "Kappa"
+
+    '                For trialNum As Integer = 1 To 3
+    '                    Dim colIndex = (trialNum - 1) * 2 + 3
+    '                    worksheet.Cells(summaryRow, 1, summaryRow + 3, 8).Style.Border.BorderAround(ExcelBorderStyle.Thick)
+    '                    worksheet.Cells(summaryRow, colIndex).Value = totalMatched(trialNum)
+    '                    worksheet.Cells(summaryRow + 1, colIndex).Value = totalInspected(trialNum)
+    '                    worksheet.Cells(summaryRow + 2, colIndex).Value = If(totalInspected(trialNum) > 0, Math.Round((totalMatched(trialNum) / totalInspected(trialNum)) * 100, 2) & "%", "0%")
+    '                Next
+
+    '                Dim combinedKappa = CalculateKappaCombined(answerKeyTable, resultTable, department)
+    '                worksheet.Cells(60, 1).Value = "KAPPA"
+    '                worksheet.Cells(60, 2).Value = combinedKappa
+
+    '                Console.WriteLine(combinedKappa)
+
+    '                worksheet.Cells.AutoFitColumns()
+    '                package.SaveAs(New System.IO.FileInfo(get_FolderPath))
+    '            End Using
+    '        End Using
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, vbCritical)
+    '    End Try
+    'End Sub
+
+    'Public Function CalculateKappaCombined(answerKeyTable As DataTable, resultTable As DataTable, department As String, Optional forceExpectedAgreement As Boolean = True) As Double
+    '    Dim aGood As Integer = 0, aNG As Integer = 0
+    '    Dim rGood As Integer = 0, rNG As Integer = 0
+    '    Dim correctCount As Integer = 0
+    '    Dim totalCount As Integer = 0
+
+    '    For i As Integer = 0 To 49
+    '        Dim correctAnswer As String = answerKeyTable.Rows(i)(department).ToString().Trim().ToUpper()
+
+    '        For trial As Integer = 1 To 3
+    '            Dim questionNumber = (i + 1).ToString()
+    '            Dim currentTrial = trial.ToString()
+
+    '            Dim trialRow = resultTable.AsEnumerable().FirstOrDefault(Function(row) _
+    '            row("Question_Num").ToString().Trim() = questionNumber AndAlso
+    '            row("Test_Trial").ToString().Trim() = currentTrial)
+
+    '            If trialRow IsNot Nothing Then
+    '                totalCount += 1
+    '                Dim empAns As String = trialRow("EmpAns").ToString().Trim().ToUpper()
+
+    '                ' Count actual answers
+    '                If empAns = "GOOD" Then rGood += 1
+    '                If empAns = "NO GOOD" Then rNG += 1
+
+    '                ' Count expected answers only when there's a match
+    '                If correctAnswer = "GOOD" Then aGood += 1
+    '                If correctAnswer = "NO GOOD" Then aNG += 1
+
+    '                If empAns = correctAnswer Then correctCount += 1
+    '            End If
+    '        Next
+    '    Next
+
+    '    If totalCount = 0 Then Return 0
+
+    '    Dim po As Double = correctCount / totalCount
+    '    Dim pe As Double
+
+    '    If forceExpectedAgreement Then
+    '        pe = 0.9
+    '    Else
+    '        ' Avoid division by zero
+    '        Dim refTotal = aGood + aNG
+    '        Dim respTotal = rGood + rNG
+
+    '        If refTotal = 0 Or respTotal = 0 Then Return 0
+
+    '        Dim refGoodRatio As Double = aGood / refTotal
+    '        Dim refNGRatio As Double = aNG / refTotal
+
+    '        Dim respGoodRatio As Double = rGood / respTotal
+    '        Dim respNGRatio As Double = rNG / respTotal
+
+    '        pe = (refGoodRatio * respGoodRatio) + (refNGRatio * respNGRatio)
+    '    End If
+
+    '    If (1 - pe) = 0 Then Return 0
+
+    '    Dim kappa As Double = (po - pe) / (1 - pe)
+    '    Return Math.Round(kappa, 4)
+    'End Function
+
+
 
 
     '=======================< FOR Transfer_Form >=====================

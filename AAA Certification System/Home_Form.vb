@@ -39,6 +39,7 @@ Public Class Home_Form
         'Load_ExamResultForm()
         'Load_TrialResultForm()
         'Extract_Result()
+        'DeleteExamResult()
 
         DataGridView1.DataSource = Nothing
         DataGridView1.Rows.Clear()

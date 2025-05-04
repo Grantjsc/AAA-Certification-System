@@ -164,7 +164,7 @@ Partial Class Exam_Form
         Me.GroupBox_TestNum.CustomBorderThickness = New System.Windows.Forms.Padding(0)
         Me.GroupBox_TestNum.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox_TestNum.ForeColor = System.Drawing.Color.Green
-        Me.GroupBox_TestNum.Location = New System.Drawing.Point(272, 76)
+        Me.GroupBox_TestNum.Location = New System.Drawing.Point(272, 84)
         Me.GroupBox_TestNum.Name = "GroupBox_TestNum"
         Me.GroupBox_TestNum.Size = New System.Drawing.Size(677, 603)
         Me.GroupBox_TestNum.TabIndex = 161

@@ -32,7 +32,7 @@
                 cboLine.Items.AddRange(New String() {"Frontline", "Back End", "QA"})
 
             Case "PLANT QUALITY"
-                cboLine.Items.AddRange(New String() {"QA"})
+                cboLine.Items.AddRange(New String() {"RS QA", "SQ NANO QA", "PICO QA", "TFF QA", "CCF QA", "TRTE QA"})
 
             Case Else
                 ' Optionally, you can handle other cases or leave the ComboBox empty

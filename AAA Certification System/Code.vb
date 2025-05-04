@@ -28,6 +28,7 @@ Module Funtion_Module
                 Main_Form.btnUpdate.Visible = False
 
             Case Else
+                Main_Form.btnTransfer.Visible = False
                 Main_Form.btnUpdate.Visible = False
                 Main_Form.btnView.Visible = False
         End Select

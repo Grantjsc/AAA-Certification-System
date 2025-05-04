@@ -22,10 +22,12 @@ Partial Class Home_Form
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home_Form))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnStart = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtLine = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtStation = New Guna.UI2.WinForms.Guna2TextBox()
@@ -39,8 +41,6 @@ Partial Class Home_Form
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.lblDay = New System.Windows.Forms.Label()
         Me.txtEmpNum = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.btnStart = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,6 +83,65 @@ Partial Class Home_Form
         Me.Button1.Text = "sample"
         Me.Button1.UseVisualStyleBackColor = True
         Me.Button1.Visible = False
+        '
+        'btnStart
+        '
+        Me.btnStart.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnStart.BackColor = System.Drawing.Color.Transparent
+        Me.btnStart.BorderRadius = 10
+        Me.btnStart.BorderThickness = 5
+        Me.btnStart.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnStart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnStart.FillColor = System.Drawing.Color.Transparent
+        Me.btnStart.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnStart.ForeColor = System.Drawing.Color.Black
+        Me.btnStart.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnStart.HoverState.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStart.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnStart.HoverState.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.btnStart.Image = CType(resources.GetObject("btnStart.Image"), System.Drawing.Image)
+        Me.btnStart.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnStart.ImageOffset = New System.Drawing.Point(5, 0)
+        Me.btnStart.ImageSize = New System.Drawing.Size(40, 40)
+        Me.btnStart.Location = New System.Drawing.Point(677, 623)
+        Me.btnStart.Name = "btnStart"
+        Me.btnStart.PressedDepth = 15
+        Me.btnStart.Size = New System.Drawing.Size(136, 55)
+        Me.btnStart.TabIndex = 7
+        Me.btnStart.Text = "Start"
+        Me.btnStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.btnStart.TextOffset = New System.Drawing.Point(-10, 0)
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.BorderRadius = 10
+        Me.Guna2Button1.BorderThickness = 5
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2Button1.HoverState.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.HoverState.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
+        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Guna2Button1.ImageSize = New System.Drawing.Size(40, 40)
+        Me.Guna2Button1.Location = New System.Drawing.Point(520, 623)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.PressedDepth = 15
+        Me.Guna2Button1.Size = New System.Drawing.Size(136, 55)
+        Me.Guna2Button1.TabIndex = 6
+        Me.Guna2Button1.Text = "Set Path"
+        Me.Guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Guna2Button1.Visible = False
         '
         'txtLine
         '
@@ -275,14 +334,14 @@ Partial Class Home_Form
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(41, 215)
         Me.DataGridView1.Name = "DataGridView1"
@@ -326,65 +385,6 @@ Partial Class Home_Form
         Me.txtEmpNum.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(10)
         Me.txtEmpNum.Size = New System.Drawing.Size(379, 40)
         Me.txtEmpNum.TabIndex = 0
-        '
-        'btnStart
-        '
-        Me.btnStart.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnStart.BackColor = System.Drawing.Color.Transparent
-        Me.btnStart.BorderRadius = 10
-        Me.btnStart.BorderThickness = 5
-        Me.btnStart.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnStart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnStart.FillColor = System.Drawing.Color.Transparent
-        Me.btnStart.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnStart.ForeColor = System.Drawing.Color.Black
-        Me.btnStart.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnStart.HoverState.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStart.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnStart.HoverState.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.btnStart.Image = CType(resources.GetObject("btnStart.Image"), System.Drawing.Image)
-        Me.btnStart.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnStart.ImageOffset = New System.Drawing.Point(5, 0)
-        Me.btnStart.ImageSize = New System.Drawing.Size(40, 40)
-        Me.btnStart.Location = New System.Drawing.Point(677, 623)
-        Me.btnStart.Name = "btnStart"
-        Me.btnStart.PressedDepth = 15
-        Me.btnStart.Size = New System.Drawing.Size(136, 55)
-        Me.btnStart.TabIndex = 7
-        Me.btnStart.Text = "Start"
-        Me.btnStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.btnStart.TextOffset = New System.Drawing.Point(-10, 0)
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 10
-        Me.Guna2Button1.BorderThickness = 5
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2Button1.HoverState.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
-        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(40, 40)
-        Me.Guna2Button1.Location = New System.Drawing.Point(520, 623)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.PressedDepth = 15
-        Me.Guna2Button1.Size = New System.Drawing.Size(136, 55)
-        Me.Guna2Button1.TabIndex = 6
-        Me.Guna2Button1.Text = "Set Path"
-        Me.Guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.Guna2Button1.Visible = False
         '
         'Home_Form
         '

@@ -100,11 +100,11 @@ Partial Class TrialResult_Form
         Me.lblScore1.BackColor = System.Drawing.Color.Transparent
         Me.lblScore1.Font = New System.Drawing.Font("Segoe UI Black", 16.0!, System.Drawing.FontStyle.Bold)
         Me.lblScore1.ForeColor = System.Drawing.Color.DimGray
-        Me.lblScore1.Location = New System.Drawing.Point(20, 46)
+        Me.lblScore1.Location = New System.Drawing.Point(10, 43)
         Me.lblScore1.Name = "lblScore1"
-        Me.lblScore1.Size = New System.Drawing.Size(136, 53)
+        Me.lblScore1.Size = New System.Drawing.Size(154, 53)
         Me.lblScore1.TabIndex = 159
-        Me.lblScore1.Text = "Score: 50%"
+        Me.lblScore1.Text = "Score: 100%"
         Me.lblScore1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2GroupBox2
@@ -158,11 +158,11 @@ Partial Class TrialResult_Form
         Me.lblScore2.BackColor = System.Drawing.Color.Transparent
         Me.lblScore2.Font = New System.Drawing.Font("Segoe UI Black", 16.0!, System.Drawing.FontStyle.Bold)
         Me.lblScore2.ForeColor = System.Drawing.Color.DimGray
-        Me.lblScore2.Location = New System.Drawing.Point(20, 46)
+        Me.lblScore2.Location = New System.Drawing.Point(12, 43)
         Me.lblScore2.Name = "lblScore2"
-        Me.lblScore2.Size = New System.Drawing.Size(136, 53)
+        Me.lblScore2.Size = New System.Drawing.Size(154, 53)
         Me.lblScore2.TabIndex = 159
-        Me.lblScore2.Text = "Score: 50%"
+        Me.lblScore2.Text = "Score: 100%"
         Me.lblScore2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2GroupBox3
@@ -216,11 +216,11 @@ Partial Class TrialResult_Form
         Me.lblScore3.BackColor = System.Drawing.Color.Transparent
         Me.lblScore3.Font = New System.Drawing.Font("Segoe UI Black", 16.0!, System.Drawing.FontStyle.Bold)
         Me.lblScore3.ForeColor = System.Drawing.Color.DimGray
-        Me.lblScore3.Location = New System.Drawing.Point(20, 46)
+        Me.lblScore3.Location = New System.Drawing.Point(12, 43)
         Me.lblScore3.Name = "lblScore3"
-        Me.lblScore3.Size = New System.Drawing.Size(136, 53)
+        Me.lblScore3.Size = New System.Drawing.Size(154, 53)
         Me.lblScore3.TabIndex = 159
-        Me.lblScore3.Text = "Score: 50%"
+        Me.lblScore3.Text = "Score: 100%"
         Me.lblScore3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox_ExamStatus

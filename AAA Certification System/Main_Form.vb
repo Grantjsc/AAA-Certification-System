@@ -29,6 +29,8 @@
     End Sub
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Count_ReCertification()
+        If Access_Level = "Admin" Or Access_Level = "LT" Then
+            Count_ReCertification()
+        End If
     End Sub
 End Class

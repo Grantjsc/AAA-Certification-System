@@ -113,7 +113,7 @@ Partial Class Edit_Form
         Me.cboStation.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.cboStation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cboStation.ItemHeight = 30
-        Me.cboStation.Items.AddRange(New Object() {"FA", "FI", "VA"})
+        Me.cboStation.Items.AddRange(New Object() {"FA", "FI", "VI"})
         Me.cboStation.Location = New System.Drawing.Point(542, 499)
         Me.cboStation.Name = "cboStation"
         Me.cboStation.ShadowDecoration.Depth = 10
